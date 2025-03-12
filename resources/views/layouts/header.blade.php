@@ -263,7 +263,7 @@
                               <div class="avatar-item bg-danger rounded-circle">
                                 <i class="far fa-calendar-alt"></i>
                               </div>
-                              <span class="text">Calendar</span>
+                              <span class="text">Mengajukan Surat</span>
                             </div>
                           </a>
                           <a class="col-6 col-md-4 p-0" href="#">
@@ -273,7 +273,7 @@
                               >
                                 <i class="fas fa-map"></i>
                               </div>
-                              <span class="text">Maps</span>
+                              <span class="text">Cek Status</span>
                             </div>
                           </a>
                           <a class="col-6 col-md-4 p-0" href="#">
@@ -281,37 +281,7 @@
                               <div class="avatar-item bg-info rounded-circle">
                                 <i class="fas fa-file-excel"></i>
                               </div>
-                              <span class="text">Reports</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div
-                                class="avatar-item bg-success rounded-circle"
-                              >
-                                <i class="fas fa-envelope"></i>
-                              </div>
-                              <span class="text">Emails</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div
-                                class="avatar-item bg-primary rounded-circle"
-                              >
-                                <i class="fas fa-file-invoice-dollar"></i>
-                              </div>
-                              <span class="text">Invoice</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div
-                                class="avatar-item bg-secondary rounded-circle"
-                              >
-                                <i class="fas fa-credit-card"></i>
-                              </div>
-                              <span class="text">Payments</span>
+                              <span class="text">Profile</span>
                             </div>
                           </a>
                         </div>
@@ -336,7 +306,7 @@
                     </div>
                     <span class="profile-username">
                       <span class="op-7">Hi,</span>
-                      <span class="fw-bold">Hizrian</span>
+                      <span class="fw-bold">UserName!</span>
                     </span>
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -351,7 +321,7 @@
                             />
                           </div>
                           <div class="u-text">
-                            <h4>Hizrian</h4>
+                            <h4>username</h4>
                             <p class="text-muted">hello@example.com</p>
                             <a
                               href="profile.html"
@@ -364,9 +334,7 @@
                       <li>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">My Profile</a>
-                        <a class="dropdown-item" href="#">My Balance</a>
                         <a class="dropdown-item" href="#">Inbox</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Logout</a>
