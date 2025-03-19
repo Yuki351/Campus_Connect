@@ -7,13 +7,12 @@
     <div
       class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
       <div>
-        <h3 class="fw-bold mb-3">Create Data Mahasiswa</h3>
-        <h6 class="op-7 mb-2">Adding Students Data into Database</h6>
+        <h3 class="fw-bold mb-3">Create Form Pengajuan</h3>
       </div>
     </div>
 
     <div class="card-body">
-      <form method = "POST" action="{{ route('mahasiswaStore') }}">
+      <form method = "POST" action="{{ route('mahasiswaForm') }}">
         @csrf
         <div class="form-group">
           <label for="nrp">NRP</label>

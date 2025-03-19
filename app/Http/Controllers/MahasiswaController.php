@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
+use App\Models\Dosen;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -21,7 +22,8 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa.create');
+        return view('mahasiswa.create') -> 
+        with('dosens', Dosen::all());
     }
 
     /**
@@ -30,15 +32,16 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $validatedData = validator($request->all(), [
-            'nrp' => 'required|string|max:7|unique:mahasiswa, nrp',
+            'nrp' => 'required|string|max:9|unique:mahasiswa, nrp',
             'nama' => 'requred|string|max:100',
             'email' => 'requred|string|email|max:50|unique:mahasiswa, email',
             'birthdate' => 'requred|date',
-            'phone' => 'required|string|max:13', 
-            'profilePicture' => 'required|'
+            'address' => 'requred|string|max:300',
+            'phone' => 'required|string|max:16', 
+            'dosen_nik' => 'required|string',
         ])->validate();
-        $dosen = new Dosen($validatedData);
-        $dosen->save();
+        $mahasiswa = new Mahasiswa($validatedData);
+        $mahasiswa->save();
         return redirect(route('mahasiswaList'));
     }
 

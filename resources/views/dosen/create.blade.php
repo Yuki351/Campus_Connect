@@ -25,14 +25,14 @@
         </div>
 
         <div class="form-group">
+          <label for="birthdate">Birth Date</label>
+          <input type="text" class="form-control" id="birthdate" placeholder="DD/MM/YYYY" required/>
+        </div>
+
+        <div class="form-group">
           <label for="email">Email Address</label>
           <input type="email" class="form-control" id="email" placeholder="Enter Email" required/>
         </div>
-        
-        <div class="form-group">
-          <label for="dosenWali">Dosen Wali</label>
-          <select class="form-control" name="dosen_nik">
-            @foreach($dosens as $dosen)
             
           </select>
         </div>

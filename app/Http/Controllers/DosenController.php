@@ -51,7 +51,12 @@ class DosenController extends Controller
      */
     public function edit(Dosen $dosen)
     {
-        //
+        $dosen = Dosen::find($nik);
+        if ($dosen == null) {
+        return back()->withErrors(['err_msg' => 'Dosen not found!']);
+        }
+        return view('dosenEdit')
+        ->with('dosen', $dosen);
     }
 
     /**
@@ -59,7 +64,23 @@ class DosenController extends Controller
      */
     public function update(Request $request, Dosen $dosen)
     {
-        //
+        $dosen = Dosen::find($nik);
+        if ($dosen == null) {
+            return back()->withErrors(['err_msg' => 'Dosen not found!']);
+        }
+        $validatedData = validator($request->all(),[
+            'nik' => ['required', 'string', 'max:7', Rule::unique('dosen', 'nik')->ignore($dosen->nik, 'nik')],
+            'name' => ['required', 'string', 'max:100'],
+            'birthdate' => ['required'],
+            'email' => ['required', 'email', 'max:50', Rule::unique('dosen', 'email')->ignore($dosen->nik, 'nik')],
+        ])->validate();
+        $dosen['name'] = $validatedData['name'];
+        $dosen['birthdate'] = $validatedData['birthdate'];
+        $dosen['email'] = $validatedData['email'];
+
+        $dosen->save();
+        return redirect()->route('dosenList')
+            -> with('success', 'Dosen Berhasil Diubah');
     }
 
     /**
@@ -67,6 +88,7 @@ class DosenController extends Controller
      */
     public function destroy(Dosen $dosen)
     {
-        //
+        $dosen->delete();
+        return redirect(route('dosenList'))->with('success', 'Dosen Berhasil Dihapus');
     }
 }

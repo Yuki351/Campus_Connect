@@ -7,15 +7,15 @@
     <div
       class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
       <div>
-        <h3 class="fw-bold mb-3">Manage Data Dosen</h3>
+        <h3 class="fw-bold mb-3">Manage Data TU</h3>
       </div>
     </div>
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title">Data Dosen</h4>
-              <a class="btn btn-primary btn-round ms-auto" href="{{route ('dosenCreate') }}">
+              <h4 class="card-title">Data TU</h4>
+              <a class="btn btn-primary btn-round ms-auto" href="{{route ('tuCreate') }}">
                 <i class="fa fa-plus">
               </a>
             </div>
@@ -27,7 +27,7 @@
                 >
                   <thead>
                     <tr>
-                      <th>NIK</th>
+                      <th>NIP</th>
                       <th>Name</th>
                       <th>BirthDate</th>
                       <th>Email</th>
@@ -35,19 +35,19 @@
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>NIK</th>
+                      <th>NIP</th>
                       <th>Name</th>
                       <th>BirthDate</th>
                       <th>Email</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    @foreach($dosens as $dosen)
+                    @foreach($tus as $tu)
                     <tr>
-                      <td>{{ $dosen->nik }}</td>
-                      <td>{{ $dosen->name }}</td>
-                      <td>{{ $dosen->birthdate }}</td>
-                      <td>{{ $dosen->email }}</td>
+                      <td>{{ $tu->nip }}</td>
+                      <td>{{ $tu->name }}</td>
+                      <td>{{ $tu->birthdate }}</td>
+                      <td>{{ $tu->email }}</td>
                     </tr>
                     @endforeach
                   </tbody>
