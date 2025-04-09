@@ -24,30 +24,6 @@
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" placeholder="Enter Name" required/>
         </div>
-        
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="Enter Address" required/>
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number" required/>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter Email" required/>
-        </div>
-
-        <div class="form-group">
-          <label for="dosenWali">Dosen Wali</label>
-          <select class="form-control" name="dosen_nik">
-            @foreach($dosens as $dosen)
-            <option value="{{ $dosen->nik }}">{{ $dosen->name }}</option>
-            @endforeach
-          </select>
-        </div>
 
         <div class="card-action">
           <input type="submit" class="btn btn-success">

@@ -26,27 +26,23 @@
         </div>
         
         <div class="form-group">
-          <label for="address">Address</label>
+          <label for="address">Kode MK</label>
           <input type="text" class="form-control" id="address" placeholder="Enter Address" required/>
         </div>
         
         <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label for="phone">Nama MK</label>
           <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number" required/>
         </div>
 
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label for="email">Tujuan</label>
           <input type="email" class="form-control" id="email" placeholder="Enter Email" required/>
         </div>
-
+        
         <div class="form-group">
-          <label for="dosenWali">Dosen Wali</label>
-          <select class="form-control" name="dosen_nik">
-            @foreach($dosens as $dosen)
-            <option value="{{ $dosen->nik }}">{{ $dosen->name }}</option>
-            @endforeach
-          </select>
+          <label for="email">Topik</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" required/>
         </div>
 
         <div class="card-action">

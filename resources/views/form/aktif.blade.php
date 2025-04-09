@@ -31,22 +31,13 @@
         </div>
         
         <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label for="phone">Semester</label>
           <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number" required/>
         </div>
 
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label for="email">Keperluan Pengajuan</label>
           <input type="email" class="form-control" id="email" placeholder="Enter Email" required/>
-        </div>
-
-        <div class="form-group">
-          <label for="dosenWali">Dosen Wali</label>
-          <select class="form-control" name="dosen_nik">
-            @foreach($dosens as $dosen)
-            <option value="{{ $dosen->nik }}">{{ $dosen->name }}</option>
-            @endforeach
-          </select>
         </div>
 
         <div class="card-action">
