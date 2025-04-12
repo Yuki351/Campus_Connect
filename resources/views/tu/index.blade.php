@@ -28,29 +28,32 @@
                   <thead>
                     <tr>
                       <th>NIP</th>
-                      <th>Name</th>
-                      <th>BirthDate</th>
+                      <th>Nama</th>
                       <th>Email</th>
+                      <th>Birth Date</th>
+                      <th>Program Studi</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>NIP</th>
-                      <th>Name</th>
-                      <th>BirthDate</th>
-                      <th>Email</th>
-                    </tr>
-                  </tfoot>
                   <tbody>
                     @foreach($tus as $tu)
                     <tr>
                       <td>{{ $tu->nip }}</td>
                       <td>{{ $tu->name }}</td>
-                      <td>{{ $tu->birthdate }}</td>
                       <td>{{ $tu->email }}</td>
+                      <td>{{ $tu->birthdate }}</td>
+                      <td>{{ $tu->program_studi }}</td>
                     </tr>
                     @endforeach
                   </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>NIP</th>
+                      <th>Nama</th>
+                      <th>Email</th>
+                      <th>BirthDate</th>
+                      <th>Program Studi</th>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
             </div>

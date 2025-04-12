@@ -41,17 +41,19 @@
                     <tr>
                       <th>NIK</th>
                       <th>Name</th>
-                      <th>BirthDate</th>
                       <th>Email</th>
+                      <th>Birth Date</th>
+                      <th>Program Studi</th>
                     </tr>
                   </thead>
                   <tbody>
                     @foreach($dosens as $dosen)
                     <tr>
                       <td>{{ $dosen->nik }}</td>
-                      <td>{{ $dosen->name }}</td>
-                      <td>{{ $dosen->birthdate }}</td>
+                      <td>{{ $dosen->nama }}</td>
                       <td>{{ $dosen->email }}</td>
+                      <td>{{ $dosen->birthdate }}</td>
+                      <td>{{ $dosen->program_studi }}</td>
                     <div class="form-button-action">
                       <button
                       type="button"
@@ -77,14 +79,15 @@
                       
                     @endforeach
                     </tr>
-                    </div>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>NIK</th>
+                  </div>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>NIK</th>
                       <th>Name</th>
-                      <th>BirthDate</th>
                       <th>Email</th>
+                      <th>BirthDate</th>
+                      <th>Program Studi</th>
                     </tr>
                   </tfoot>
                 </table>

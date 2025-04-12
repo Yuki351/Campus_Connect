@@ -8,6 +8,7 @@
       class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
       <div>
         <h3 class="fw-bold mb-3">Create Form Pengajuan</h3>
+        <h5 class="fw-bold mb-3">Isi Sesuai Keperluan</h4>
       </div>
     </div>
 
@@ -15,37 +16,52 @@
       <form method = "POST" action="{{ route('mahasiswaForm') }}">
         @csrf
         <div class="form-group">
-          <label for="nrp">NRP</label>
-          <input type="text" class="form-control" id="nrp" placeholder="Enter NIK" required autofocus maxlength="7"/>
+          <label for="jenis_surat">Select Form Type:</label>
+          <select name="jenis_surat" id="jenis_surat" required>
+              <option value="">-- Choose a Form --</option>
+              <option value="aktif">Surat Keterangan Mahasiswa Aktif</option>
+              <option value="tugas">Surat Pengantar Tugas Mata Kuliah</option>
+              <option value="lulus">Surat Keterangan Lulus</option>
+              <option value="laporan">Surat Laporan Hasil Studi</option>
+          </select>
         </div>
 
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Name" required/>
+          <label for="nrp">NRP</label>
+          <input type="text" class="form-control" name="nrp" id="nrp" placeholder="Enter NIK" required autofocus maxlength="7"/>
+        </div>
+
+        <div class="form-group">
+          <label for="nama">Name</label>
+          <input type="text" class="form-control" name="nama" id="nama" placeholder="Enter Name" required/>
         </div>
         
         <div class="form-group">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="Enter Address" required/>
+          <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address"/>
         </div>
         
         <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number" required/>
+          <label for="semester">Semester</label>
+          <input type="text" class="form-control" name="semester" id="semester" placeholder="Enter Semester"/>
         </div>
 
         <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter Email" required/>
+          <label for="tujuan">Tujuan</label>
+          <input type="text" class="form-control" name="tujuan" id="tujuan"/>
         </div>
 
         <div class="form-group">
-          <label for="dosenWali">Dosen Wali</label>
-          <select class="form-control" name="dosen_nik">
-            @foreach($dosens as $dosen)
-            <option value="{{ $dosen->nik }}">{{ $dosen->name }}</option>
-            @endforeach
-          </select>
+          <label for="topik">Topik</label>
+          <input class="form-control" name="topik"></select>
+        </div>
+        <div class="form-group">
+          <label for="kodeMK">Kode MK</label>
+          <input class="form-control" name="kodeMK"></select>
+        </div>
+        <div class="form-group">
+          <label for="namaMK">Nama MK</label>
+          <input class="form-control" name="namaMK"></select>
         </div>
 
         <div class="card-action">

@@ -31,7 +31,8 @@ class DosenController extends Controller
             'nik' => 'required|string|max:7|unique:dosen, nik',
             'nama' => 'requred|string|max:100',
             'email' => 'requred|string|email|max:50|unique:dosen, email',
-            'birthdate' => 'requred|date'
+            'birthdate' => 'requred|date',
+            'program_studi' => 'required|string|max:3',
         ])->validate();
         $dosen = new Dosen($validatedData);
         $dosen->save();
@@ -73,6 +74,7 @@ class DosenController extends Controller
             'name' => ['required', 'string', 'max:100'],
             'birthdate' => ['required'],
             'email' => ['required', 'email', 'max:50', Rule::unique('dosen', 'email')->ignore($dosen->nik, 'nik')],
+            'program_studi' => ['required', 'string', 'max:3'],
         ])->validate();
         $dosen['name'] = $validatedData['name'];
         $dosen['birthdate'] = $validatedData['birthdate'];

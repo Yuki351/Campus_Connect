@@ -34,6 +34,7 @@ class TUController extends Controller
             'nama' => 'requred|string|max:50',
             'email' => 'requred|string|email|max:100|unique:tu, email',
             'birthdate' => 'requred|date',
+            'program_studi' => 'required|string|max:3',
         ])->validate();
         $tu = new TU($validatedData);
         $tu->save();
@@ -75,6 +76,7 @@ class TUController extends Controller
             'name' => ['required', 'string', 'max:100'],
             'birthdate' => ['required'],
             'email' => ['required', 'email', 'max:50', Rule::unique('tu', 'email')->ignore($tu->nip, 'nip')],
+            'program_studi' => ['required', 'string', 'max:3'],
         ])->validate();
         $tu['name'] = $validatedData['name'];
         $tu['birthdate'] = $validatedData['birthdate'];
@@ -92,5 +94,28 @@ class TUController extends Controller
     {
         $tu->delete();
         return redirect(route('tuList'))->with('success', 'TU Berhasil Dihapus');
+    }
+    
+    /**
+     * Show the form for uploading a file.
+     */
+    public function view()
+    {
+        return view('tu.upload');
+    }
+    /**
+     * Handle the file upload.
+     */
+    public function upload(Request $request)
+    {
+        $request->validate([
+            'pdf' => 'required|mimes:pdf|max:2048', // Max 2MB
+        ]);
+
+        $file = $request->file('pdf');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $file->storeAs('/uploads/pdf/', $fileName); 
+
+        return back()->with('success', 'PDF uploaded successfully!');
     }
 }

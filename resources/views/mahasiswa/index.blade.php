@@ -31,37 +31,38 @@
                     <tr>
                       <th>NRP</th>
                       <th>Name</th>
-                      <th>Address</th>
                       <th>Email</th>
-                      <th>Phone</th>
+                      <th>Address</th>
                       <th>Birth Date</th>
-                      <th>Dosen Wali</th>
+                      <th>Phone Number</th>
+                      <th>Program Studi</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                    <th>NRP</th>
-                      <th>Name</th>
-                      <th>Address</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Birth Date</th>
-                      <th>Dosen Wali</th>
-                    </tr>
-                  </tfoot>
                   <tbody>
                     @foreach($mahasiswas as $mahasiswa)
                     <tr>
                       <td>{{ $mahasiswa->nrp }}</td>
-                      <td>{{ $mahasiswa->name }}</td>
-                      <td>{{ $mahasiswa->address }}</td>
+                      <td>{{ $mahasiswa->nama }}</td>
                       <td>{{ $mahasiswa->email }}</td>
-                      <td>{{ $mahasiswa->phone }}</td>
+                      <td>{{ $mahasiswa->address }}</td>
                       <td>{{ $mahasiswa->birthdate }}</td>
-                      <td>{{ $mahasiswa->dosenWali->nik }} - {{$mhs->dosenWali->name}}</td>
+                      <td>{{ $mahasiswa->phone_number }}</td>
+                      <td>{{ $mahasiswa->program_studi }}</td>
+                      <td></td>
                     </tr>
                     @endforeach
                   </tbody>
+                  <tfoot>
+                    <tr>
+                    <th>NRP</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Address</th>
+                      <th>Birth Date</th>
+                      <th>Phone Number</th>
+                      <th>Program Studi</th>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
             </div>

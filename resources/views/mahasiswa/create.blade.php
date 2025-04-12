@@ -17,36 +17,37 @@
         @csrf
         <div class="form-group">
           <label for="nrp">NRP</label>
-          <input type="text" class="form-control" id="nrp" placeholder="Enter NIK" required autofocus maxlength="7"/>
+          <input type="text" class="form-control" name="nrp" id="nrp" placeholder="Enter NRP" required autofocus maxlength="9"/>
         </div>
 
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Name" required/>
+          <label for="nama">Name</label>
+          <input type="text" class="form-control" name="nama" id="nama" placeholder="Enter Name" required/>
         </div>
         
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="Enter Address" required/>
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number" required/>
-        </div>
-
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter Email" required/>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" required/>
         </div>
 
         <div class="form-group">
-          <label for="dosenWali">Dosen Wali</label>
-          <select class="form-control" name="dosen_nik">
-            @foreach($dosens as $dosen)
-            <option value="{{ $dosen->nik }}">{{ $dosen->name }}</option>
-            @endforeach
-          </select>
+          <label for="address">Address</label>
+          <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="birthdate">Birth Date</label>
+          <input type="date" class="form-control" name="birthdate" id="birthdate" placeholder="DD/MM/YYYY" required/>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone_number">Phone Number</label>
+          <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Enter Phone Number" required/>
+        </div>
+        
+        <div class="form-group">
+          <label for="program_studi">Program Studi</label>
+          <input type="text" class="form-control" name="program_studi" id="program_studi" placeholder="Enter Program Studi" required/>
         </div>
 
         <div class="card-action">
