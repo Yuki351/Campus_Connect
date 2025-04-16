@@ -60,8 +60,8 @@ Route::get('/login', function () {
     Route::get('/mhs/edit/{mahasiswa}', [MahasiswaController::class, 'edit'])-> name('mahasiswaEdit');
     Route::put('/mhs/edit/{mahasiswa}', [MahasiswaController::class, 'update'])-> name('mahasiswaUpdate');
     Route::delete('/mhs/delete/{mahasiswa}', [MahasiswaController::class, 'destroy'])-> name('mahasiswaDestroy');
-    Route::post('/mhs/submit', [SuratPengajuanController::class, 'submitted'])-> name('mahasiswaForm');
-    Route::get('/mhs/form', [SuratPengajuanController::class, 'form'])-> name('mahasiswaFormStore');
+    Route::post('/mhs/submit', [SuratPengajuanController::class, 'submitted'])-> name('mahasiswaFormView');
+    Route::get('/mhs/form', [SuratPengajuanController::class, 'form'])-> name('mahasiswaForm');
 // });
 
 Route::get('/dashboard', function () {

@@ -82,3 +82,24 @@
 @section('ExtraJS')
 
 @endsection
+
+
+<form action="{{ route('form-requests.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <label>Jenis Surat:</label>
+    <select name="form_type" required>
+        <option value="aktif">Surat Keterangan Mahasiswa Aktif</option>
+        <option value="tugas">Surat Pengantar Tugas Mata Kuliah</option>
+        <option value="lulus">Surat Keterangan Lulus</option>
+        <option value="laporan">Surat Laporan Hasil Studi</option>
+    </select>
+
+    <br><br>
+
+    <label>Keterangan Tambahan:</label>
+    <textarea name="description"></textarea>
+
+    <br><br>
+
+    <button type="submit">Kirim</button>
+</form>

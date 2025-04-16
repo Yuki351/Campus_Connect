@@ -43,3 +43,11 @@
 @section('ExtraJS')
 
 @endsection
+
+@if($request->status === 'approved' && !$request->approved_pdf)
+    <form action="{{ route('form-requests.upload-pdf', $request->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="pdf_file" accept="application/pdf" required>
+        <button type="submit">Upload PDF</button>
+    </form>
+@endif

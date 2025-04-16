@@ -93,4 +93,15 @@ class DosenController extends Controller
         $dosen->delete();
         return redirect(route('dosenList'))->with('success', 'Dosen Berhasil Dihapus');
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $form = FormRequest::findOrFail($id);
+        $form->status = $request->action === 'approve' ? 'approved' : 'disapproved';
+        $form->dosen_notes = $request->dosen_notes;
+        $form->save();
+
+        return back()->with('success', 'Status updated.');
+    }
+
 }
